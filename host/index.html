@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Example: Loading ESM modules from external libraries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="importmap">
+    {
+      "imports": {
+        "library1": "http://localhost:3001/index.js",
+        "process": "https://ga.jspm.io/npm:@jspm/core@2.0.0-beta.24/nodelibs/browser/process.js",
+        "vue": "https://ga.jspm.io/npm:vue@3.2.37/dist/vue.runtime.esm-bundler.js"
+      },
+      "scopes": {
+        "https://ga.jspm.io/": {
+          "@vue/reactivity": "https://ga.jspm.io/npm:@vue/reactivity@3.2.37/dist/reactivity.esm-bundler.js",
+          "@vue/runtime-core": "https://ga.jspm.io/npm:@vue/runtime-core@3.2.37/dist/runtime-core.esm-bundler.js",
+          "@vue/runtime-dom": "https://ga.jspm.io/npm:@vue/runtime-dom@3.2.37/dist/runtime-dom.esm-bundler.js",
+          "@vue/shared": "https://ga.jspm.io/npm:@vue/shared@3.2.37/dist/shared.esm-bundler.js"
+        }
+      }
+    }
+  </script>
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
